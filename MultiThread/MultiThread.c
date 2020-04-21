@@ -8,7 +8,7 @@ DWORD  WINAPI  summation(LPVOID  Param)
 	for (DWORD i = 0; i <= Upper; i++) {
 		sum += i;
 		Sleep(100);
-		printf("%d\n", sum);
+		printf("1번쓰레드: %d\n", sum);
 		printf("--- \n");
 	}
 	return 0;
@@ -31,7 +31,7 @@ DWORD WINAPI Prime(LPVOID Param)
 		}
 		if (i == j) {
 			count++;
-			printf("%d\n", i);
+			printf("2번쓰레드: %d\n", i);
 			Sleep(100);
 		}
 
@@ -50,7 +50,7 @@ DWORD WINAPI Factorial(LPVOID Param)
 	DWORD Upper = *(DWORD*)Param;
 	for (DWORD i = 1; i <= Upper; i++) {
 		fact_v = fact_v * i;
-		printf("%d\n", fact_v);
+		printf("3번 쓰레드: %d\n", fact_v);
 		Sleep(1000);
 		printf("---\n");
 
